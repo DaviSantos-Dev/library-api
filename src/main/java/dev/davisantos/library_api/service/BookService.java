@@ -14,10 +14,6 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
     public void save(Book book){
         bookRepository.save(book);
     }

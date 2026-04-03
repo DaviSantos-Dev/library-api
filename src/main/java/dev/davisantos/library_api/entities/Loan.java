@@ -44,4 +44,16 @@ public class Loan {
         return loanDate;
     }
 
+    public void setLoanDate(){
+        this.loanDate = Instant.now();
+    }
+
+    public Instant getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(){
+        this.returnDate = Instant.now();
+    }
+
 }
