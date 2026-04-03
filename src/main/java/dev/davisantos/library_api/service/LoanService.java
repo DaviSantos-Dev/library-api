@@ -32,15 +32,12 @@ public class LoanService {
         return loanRepository.findAll();
     }
 
-    public Optional<Loan> findById(Long id){
-        return loanRepository.findById(id);
-    }
-
-    //Optei por deixar sem update no Loan
-    //Pois achei sem sentido alterar um emprétismo, visto que o comum seria devolver o livro emprestado e pegar outro
-
-    public void delete(Long id){
-        loanRepository.deleteById(id);
+    public Loan findById(Long id){
+        Loan loan = loanRepository.findById(id).get();
+        if(loan == null){
+            throw new NotFoundException("Loan not found");
+        }
+        return loan;
     }
 
     public void returnBook(Long id){
@@ -56,6 +53,7 @@ public class LoanService {
         }
         loan.setReturnDate();
         loan.getBook().setAvailable(true);
+        loanRepository.save(loan);
     }
 
 }
