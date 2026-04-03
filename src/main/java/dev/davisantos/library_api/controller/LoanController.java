@@ -15,9 +15,9 @@ public class LoanController {
     @Autowired
     private LoanService loanService;
 
-    @PostMapping
-    public ResponseEntity<Loan> create(@RequestBody Loan loan){
-        loanService.create(loan);
+    @PostMapping("/{id}")
+    public ResponseEntity<Loan> create(@RequestBody Loan loan, @PathVariable Long id){
+        loanService.create(loan, id);
         return ResponseEntity.ok().body(loan);
     }
 
