@@ -126,7 +126,7 @@ O foco foi consolidar fundamentos importantes de desenvolvimento backend, priori
 
 ```bash
 # Clonar repositório
-git clone https://github.com/seu-user/library-api.git
+git clone https://github.com/DaviSantos-Dev/library-api.git
 
 # Entrar na pasta
 cd library-api
