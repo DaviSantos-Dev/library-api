@@ -9,7 +9,7 @@ Este projeto foi desenvolvido como minha **primeira API utilizando Spring Boot**
 * Estruturação de aplicações backend
 * Regras de negócio simples
 
-> ⚠️ Este não é um projeto de portfólio final, mas sim um **projeto de aprendizado**, onde o foco foi entender o funcionamento do ecossistema Spring na prática.
+> ⚠️ Este é um **projeto de aprendizado**, onde o foco foi entender o funcionamento do ecossistema Spring na prática.
 
 ---
 
@@ -112,4 +112,24 @@ Durante o desenvolvimento, foram trabalhados conceitos importantes como:
 
 Este projeto marca o início da minha prática com Spring Boot.
 
-O foco não foi perfeição, mas sim **entender o funcionamento, errar e aprender com os erros** — construindo uma base sólida para evoluções futuras.
+O foco foi consolidar fundamentos importantes de desenvolvimento backend, priorizando entendimento prático sobre complexidade desnecessária.
+
+
+## ▶️ Como executar
+
+### Pré-requisitos
+- JDK 21
+- IDE (preferencialmente IntelliJ)
+- Postman ou Insomnia
+
+### Passos
+
+```bash
+# Clonar repositório
+git clone https://github.com/seu-user/library-api.git
+
+# Entrar na pasta
+cd library-api
+
+# Rodar aplicação
+./mvnw spring-boot:run
