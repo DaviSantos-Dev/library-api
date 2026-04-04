@@ -1,5 +1,6 @@
 package dev.davisantos.library_api.controller;
 
+import dev.davisantos.library_api.dto.BookDto;
 import dev.davisantos.library_api.entities.Loan;
 import dev.davisantos.library_api.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class LoanController {
     private LoanService loanService;
 
     @PostMapping("/{id}")
-    public ResponseEntity<Loan> create(@RequestBody Loan loan, @PathVariable Long id){
-        loanService.create(loan, id);
+    public ResponseEntity<Loan> create(@PathVariable ("id") Long id){
+        Loan loan = loanService.create(id);
         return ResponseEntity.ok().body(loan);
     }
 
@@ -27,11 +28,11 @@ public class LoanController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Loan> findById(@PathVariable ("id)") Long id){
+    public ResponseEntity<Loan> findById(@PathVariable ("id") Long id){
         return ResponseEntity.ok().body(loanService.findById(id));
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<String> returnBook(@PathVariable ("id") Long loan){
+    @PutMapping("/{loanId}")
+    public ResponseEntity<String> returnBook(@PathVariable ("loanId") Long loan){
         loanService.returnBook(loan);
         return ResponseEntity.ok().body("The book has been returned");
     }

@@ -10,7 +10,7 @@ public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
+    @ManyToOne
     private Book book;
     private Instant loanDate;
     @Column (nullable = true)
@@ -44,16 +44,14 @@ public class Loan {
         return loanDate;
     }
 
-    public void setLoanDate(){
-        this.loanDate = Instant.now();
-    }
-
     public Instant getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(){
+    public void startLoan(){
+        this.loanDate = Instant.now();
+    }
+    public void endLoan(){
         this.returnDate = Instant.now();
     }
-
 }

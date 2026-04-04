@@ -13,7 +13,6 @@ import java.util.Optional;
 @RequestMapping("/books")
 public class BookController {
 
-    @Autowired
     private BookService bookService;
 
     public BookController(BookService bookService) {
@@ -28,14 +27,14 @@ public class BookController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Book> getById(@PathVariable Long id) {
-        Optional<Book> book = bookService.findById(id);
-        return ResponseEntity.ok().body(book.get());
+        Book book = bookService.findById(id);
+        return ResponseEntity.ok().body(book);
     }
 
     @PostMapping
     public ResponseEntity<Book> save(@RequestBody Book book) {
         bookService.save(book);
-        return ResponseEntity.ok().body(book);
+        return ResponseEntity.status(201).body(book);
     }
 
     @PutMapping("/{id}")
