@@ -1,6 +1,5 @@
 package dev.davisantos.library_api.controller;
 
-import dev.davisantos.library_api.dto.BookDto;
 import dev.davisantos.library_api.entities.Loan;
 import dev.davisantos.library_api.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
